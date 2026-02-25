@@ -6,11 +6,17 @@
     <title>Tauriq Samuels | Full Stack Developer Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&family=JetBrains+Mono&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
     <nav class="top-nav">
-        <div class="status-indicator"><span class="pulse"></span> <span id="greeting"></span></div>
+        <div class="status-indicator">
+            <img src="Logo.png" alt="TS Logo" class="nav-logo">
+            <span class="pulse"></span> 
+            <span id="greeting"></span>
+        </div>
         <div id="age-display" class="age-badge"></div>
     </nav>
 
@@ -23,9 +29,18 @@
                 
                 <h1 id="user-name"></h1>
                 <p class="glitch-text" id="user-title"></p>
+
                 <div class="contact-bar">
-                    <span id="location-text"></span>
-                    <a id="user-email" href="#"></a>
+                    <span>
+                        <i class="fas fa-location-dot"></i> 
+                        <span id="location-text"></span>
+                    </span>
+                    <a id="user-email" href="mailto:SamuelsTauriq@gmail.com">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="http://linkendin.com/in/tauriq-samuels-799377201" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
                 </div>
             </div>
         </header>
@@ -40,20 +55,20 @@
             </div>
         </section>
 
-    <section class="library-section reveal-hidden">
-        <div class="section-header">
-            <h2>Mission & Aspirations</h2>
-            <div class="line"></div>
-        </div>
-        <div class="aspiration-card">
-            <p>
-                My objective is to scale <strong>Narita Projects</strong> into a powerhouse that architects and maintains enterprise-level infrastructure. I am committed to reaching the apex of software engineering through relentless project iteration and knowledge acquisition.
-            </p>
-            <p class="commitment-note">
-                <em>"I am the developer who stays online when the weekend starts. If a system needs to work, I will spend the hours required to ensure its integrity and performance. I bring that same obsessive dedication to every team I join."</em>
-            </p>
-        </div>
-    </section>
+        <section class="library-section reveal-hidden">
+            <div class="section-header">
+                <h2>Mission & Aspirations</h2>
+                <div class="line"></div>
+            </div>
+            <div class="aspiration-card">
+                <p>
+                    My objective is to scale <strong>Narita Projects</strong> into a powerhouse that architects and maintains enterprise-level infrastructure. I am committed to reaching the apex of software engineering through relentless project iteration and knowledge acquisition.
+                </p>
+                <p class="commitment-note">
+                    <em>"I am the developer who stays online when the weekend starts. If a system needs to work, I will spend the hours required to ensure its integrity and performance. I bring that same obsessive dedication to every team I join."</em>
+                </p>
+            </div>
+        </section>
 
         <section class="library-section">
             <div class="section-header">
@@ -71,8 +86,11 @@
             <div id="project-grid" class="project-grid"></div>
         </section>
     </main>
-    <br>
-    <br>
+
+<script>
+    // Automatic year update
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
     <script src="data.js"></script>
     <script src="motion.js"></script>

@@ -29,6 +29,7 @@
     border-color: var(--accent);
 }
 
+
 body {
     background-color: var(--bg);
     color: var(--text-main);
@@ -37,6 +38,7 @@ body {
     padding: 0 8vw;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    margin-bottom: 50px;
 }
 
 /* Smooth Navigation */
@@ -205,4 +207,100 @@ h1 {
 .reveal-visible {
     opacity: 1;
     transform: translateY(0) scale(1);
+}
+
+.status-indicator {
+    display: flex;
+    align-items: center;
+    /* This keeps logo, pulse, and text on one line */
+    gap: 12px;
+    /* Adds clean spacing between elements */
+}
+
+.nav-logo {
+    width: 80px;
+    /* Small and subtle for the nav bar */
+    height: 80px;
+    border-radius: 6px;
+    /* Softens the logo edges to match the UI */
+    object-fit: contain;
+    /* Optional: adds a slight glow to match your accent color */
+    filter: drop-shadow(0 0 5px rgba(255, 92, 0, 0.2));
+}
+
+/* Adjust the pulse margin since we now have gap handled above */
+.pulse {
+    margin-right: 0;
+}
+
+/* Tablet & Mobile Optimization */
+@media (max-width: 1024px) {
+    body {
+        padding: 0 5vw;
+        /* Reduces side gutters so content has more room */
+    }
+
+    h1 {
+        font-size: clamp(2.5rem, 12vw, 4.5rem);
+        /* Prevents giant text from overflowing */
+    }
+}
+
+/* Mobile Core Fixes */
+@media (max-width: 768px) {
+    header {
+        margin: 40px 0 60px 0;
+        text-align: center;
+        /* Centers profile and heading for better mobile balance */
+    }
+
+    .status-indicator {
+        font-size: 0.65rem;
+    }
+
+    .nav-logo {
+        width: 60px;
+        /* Slightly smaller logo for mobile bars */
+        height: 60px;
+    }
+
+    .contact-bar {
+        justify-content: center;
+        /* Centers your contact icons */
+        flex-wrap: wrap;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        /* Forces cards to stack vertically on small phones */
+    }
+
+    .skill-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    /* Flipped Footer Mobile Optimization */
+    .footer-links {
+        width: 100%;
+        padding: 0 10px;
+    }
+
+    .footer-links .nav-link {
+        padding: 12px 20px;
+        transform: none !important;
+        /* Disables the side-nudge on mobile to prevent horizontal scroll */
+    }
+}
+
+/* Fix for ultra-small screens (iPhone SE / Fold) */
+@media (max-width: 380px) {
+    .top-nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .ai-philosophy {
+        padding: 25px;
+        font-size: 0.95rem;
+    }
 }
